@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sagar Pawar | Software Engineer</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans antialiased" x-data="{ darkMode: false, mobileMenu: false }" :class="{ 'dark bg-gray-900 text-white': darkMode }">
+    <!-- Header -->
+    <header class="fixed w-full bg-white dark:bg-gray-800 shadow-md z-50 transition-colors duration-300">
+        <div class="container mx-auto px-4 md:px-6 py-4">
+            <div class="flex justify-between items-center">
+                <a href="#" class="text-2xl font-bold text-blue-600 dark:text-blue-400">Sagar<span class="text-gray-800 dark:text-white">Pawar</span></a>
+                
+                <div class="hidden md:flex items-center space-x-8">
+                    <nav class="flex items-center space-x-6">
+                        <a href="#about" class="nav-link">About</a>
+                        <a href="#skills" class="nav-link">Skills</a>
+                        <a href="#experience" class="nav-link">Experience</a>
+                        <a href="#projects" class="nav-link">Projects</a>
+                        <a href="#contact" class="nav-link">Contact</a>
+                    </nav>
+                    
+                    <button @click="darkMode = !darkMode" class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-300">
+                        <i class="fas" :class="darkMode ? 'fa-sun text-yellow-400' : 'fa-moon text-gray-600'"></i>
+                    </button>
+                </div>
+                
+                <button @click="mobileMenu = !mobileMenu" class="md:hidden p-2 rounded-md hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-300">
+                    <i class="fas" :class="mobileMenu ? 'fa-times' : 'fa-bars'"></i>
+                </button>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div x-show="mobileMenu" x-transition class="md:hidden mt-4 py-4 border-t border-gray-200 dark:border-gray-700">
+                <nav class="flex flex-col space-y-4">
+                    <a href="#about" @click="mobileMenu = false" class="nav-link">About</a>
+                    <a href="#skills" @click="mobileMenu = false" class="nav-link">Skills</a>
+                    <a href="#experience" @click="mobileMenu = false" class="nav-link">Experience</a>
+                    <a href="#projects" @click="mobileMenu = false" class="nav-link">Projects</a>
+                    <a href="#contact" @click="mobileMenu = false" class="nav-link">Contact</a>
+                </nav>
+                <div class="mt-4 pt-4 border-t border-gray-200 dark:border-gray-700">
+                    <button @click="darkMode = !darkMode" class="flex items-center space-x-2 text-sm text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300">
+                        <i class="fas" :class="darkMode ? 'fa-sun' : 'fa-moon'"></i>
+                        <span x-text="darkMode ? 'Light Mode' : 'Dark Mode'"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="pt-24 pb-16 md:pt-32 md:pb-24 bg-gradient-to-br from-blue-50 to-white dark:from-gray-800 dark:to-gray-900 transition-colors duration-300">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 md:pr-12">
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-gray-900 dark:text-white animate-fade-in">
+                        Hi, I'm <span class="text-blue-600 dark:text-blue-400">Sagar Pawar</span>
+                    </h1>
+                    <h2 class="text-xl md:text-2xl font-medium text-gray-600 dark:text-gray-300 mb-6 animate-fade-in animation-delay-200">
+                        Full Stack Software Engineer
+                    </h2>
+                    <p class="text-gray-600 dark:text-gray-300 mb-8 leading-relaxed max-w-lg animate-fade-in animation-delay-400">
+                        Results-driven developer with expertise in Java, Spring Boot, React, and SQL.
+                        Passionate about building scalable applications and optimizing business workflows.
+                    </p>
+                    <div class="flex flex-wrap gap-4 mb-8 animate-fade-in animation-delay-600">
+                        <a href="#contact" class="btn btn-primary">
+                            Get in Touch
+                        </a>
+                        <a href="#projects" class="btn btn-secondary">
+                            View My Work
+                        </a>
+                    </div>
+                    <div class="flex space-x-4 animate-fade-in animation-delay-800">
+                        <a href="https://www.linkedin.com/in/sagarpawar0204/" target="_blank" class="social-icon">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://github.com/sagarpawarsp/sagarpawarsp" target="_blank" class="social-icon">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="mailto:sagarpawar9112895342@gmail.com" class="social-icon">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="md:w-1/2 mt-12 md:mt-0 animate-slide-in-right">
+                    <img src="https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Professional Developer" class="rounded-lg shadow-xl w-full max-w-lg mx-auto">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 md:py-24 bg-white dark:bg-gray-800 transition-colors duration-300">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="md:w-2/5">
+                    <img src="https://images.pexels.com/photos/927022/pexels-photo-927022.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="About Sagar Pawar" class="rounded-lg shadow-lg w-full animate-on-scroll">
+                </div>
+                <div class="md:w-3/5">
+                    <div class="section-heading">
+                        <h3 class="section-subtitle">Get to know me</h3>
+                        <h2 class="section-title">About Me</h2>
+                    </div>
+                    <p class="mb-6 animate-on-scroll">
+                        I'm a Full Stack Developer with experience in Java, Spring Boot, React.js, and SQL, 
+                        specializing in automation, data analysis, and full-stack application development.
+                    </p>
+                    <p class="mb-6 animate-on-scroll animation-delay-200">
+                        I have a proven ability to streamline processes with RPA bots, enhance operational efficiency, 
+                        and build scalable applications. I'm adept at collaborating with cross-functional teams to 
+                        deliver data-driven solutions and optimize business workflows.
+                    </p>
+                    <p class="mb-8 animate-on-scroll animation-delay-400">
+                        Currently pursuing my Master's in Computer Applications, I combine academic knowledge with 
+                        practical experience to create innovative solutions for complex problems.
+                    </p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 animate-on-scroll animation-delay-600">
+                        <div class="flex items-center">
+                            <i class="fas fa-envelope text-blue-600 dark:text-blue-400 mr-3"></i>
+                            <span>sagarpawar9112895342@gmail.com</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-phone text-blue-600 dark:text-blue-400 mr-3"></i>
+                            <span>9112895342</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-map-marker-alt text-blue-600 dark:text-blue-400 mr-3"></i>
+                            <span>Nashik, Maharashtra</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-graduation-cap text-blue-600 dark:text-blue-400 mr-3"></i>
+                            <span>MCA, K K Wagh Education Society</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-16 md:py-24 bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="section-heading text-center mb-12">
+                <h3 class="section-subtitle">What I'm good at</h3>
+                <h2 class="section-title">My Skills</h2>
+            </div>
+            
+            <div class="mb-16">
+                <h3 class="text-xl font-bold mb-6 text-gray-800 dark:text-white">Technical Skills</h3>
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                    <div class="skill-card" x-data="{ hover: false }">
+                        <div class="skill-icon bg-blue-100 dark:bg-blue-900">
+                            <i class="fab fa-java"></i>
+                        </div>
+                        <h4>Java</h4>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 90%"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-card">
+                        <div class="skill-icon bg-green-100 dark:bg-green-900">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                        <h4>Spring Boot</h4>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 85%"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-card">
+                        <div class="skill-icon bg-yellow-100 dark:bg-yellow-900">
+                            <i class="fab fa-js"></i>
+                        </div>
+                        <h4>JavaScript</h4>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 80%"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-card">
+                        <div class="skill-icon bg-blue-100 dark:bg-blue-900">
+                            <i class="fab fa-react"></i>
+                        </div>
+                        <h4>React JS</h4>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 75%"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-card">
+                        <div class="skill-icon bg-indigo-100 dark:bg-indigo-900">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <h4>SQL</h4>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 85%"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-card">
+                        <div class="skill-icon bg-red-100 dark:bg-red-900">
+                            <i class="fab fa-html5"></i>
+                        </div>
+                        <h4>HTML & CSS</h4>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 80%"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-card">
+                        <div class="skill-icon bg-blue-100 dark:bg-blue-900">
+                            <i class="fab fa-python"></i>
+                        </div>
+                        <h4>Python</h4>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 70%"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-card">
+                        <div class="skill-icon bg-gray-100 dark:bg-gray-700">
+                            <i class="fab fa-github"></i>
+                        </div>
+                        <h4>Git & GitHub</h4>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 85%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div>
+                <h3 class="text-xl font-bold mb-6 text-gray-800 dark:text-white">Professional Skills</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="animate-on-scroll">
+                        <div class="flex justify-between mb-2">
+                            <span class="font-medium">Data Cleaning & Visualization</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="h-3 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden">
+                            <div class="h-full bg-blue-600 dark:bg-blue-500 rounded-full" style="width: 85%; transition: width 1.5s ease-in-out;"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="animate-on-scroll animation-delay-200">
+                        <div class="flex justify-between mb-2">
+                            <span class="font-medium">Machine Learning</span>
+                            <span>75%</span>
+                        </div>
+                        <div class="h-3 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden">
+                            <div class="h-full bg-blue-600 dark:bg-blue-500 rounded-full" style="width: 75%; transition: width 1.5s ease-in-out;"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="animate-on-scroll animation-delay-400">
+                        <div class="flex justify-between mb-2">
+                            <span class="font-medium">Team Leadership</span>
+                            <span>90%</span>
+                        </div>
+                        <div class="h-3 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden">
+                            <div class="h-full bg-blue-600 dark:bg-blue-500 rounded-full" style="width: 90%; transition: width 1.5s ease-in-out;"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="animate-on-scroll animation-delay-600">
+                        <div class="flex justify-between mb-2">
+                            <span class="font-medium">Strategic Planning</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="h-3 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden">
+                            <div class="h-full bg-blue-600 dark:bg-blue-500 rounded-full" style="width: 85%; transition: width 1.5s ease-in-out;"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="animate-on-scroll animation-delay-800">
+                        <div class="flex justify-between mb-2">
+                            <span class="font-medium">Process Improvement</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="h-3 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden">
+                            <div class="h-full bg-blue-600 dark:bg-blue-500 rounded-full" style="width: 85%; transition: width 1.5s ease-in-out;"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="animate-on-scroll animation-delay-1000">
+                        <div class="flex justify-between mb-2">
+                            <span class="font-medium">Presentation Skills</span>
+                            <span>80%</span>
+                        </div>
+                        <div class="h-3 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden">
+                            <div class="h-full bg-blue-600 dark:bg-blue-500 rounded-full" style="width: 80%; transition: width 1.5s ease-in-out;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-16 md:py-24 bg-white dark:bg-gray-800 transition-colors duration-300">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="section-heading text-center mb-12">
+                <h3 class="section-subtitle">My professional journey</h3>
+                <h2 class="section-title">Work Experience</h2>
+            </div>
+            
+            <div class="relative">
+                <!-- Timeline Line -->
+                <div class="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 top-0 bottom-0 w-1 bg-blue-200 dark:bg-blue-900"></div>
+                
+                <!-- Experience Item 1 -->
+                <div class="timeline-item left">
+                    <div class="timeline-content animate-on-scroll">
+                        <div class="timeline-date">
+                            <span>Jan 2025 - June 2025</span>
+                        </div>
+                        <div class="timeline-card">
+                            <h3 class="timeline-title">Trainee Java Intern</h3>
+                            <h4 class="timeline-company">Profound Edutech Technologies | Nashik</h4>
+                            <ul class="timeline-description">
+                                <li>Contributed to the design, development, and maintenance of Java-based web and desktop applications utilizing Java SE, Java EE, and the Spring Framework.</li>
+                                <li>Developed CRUD operations and RESTful web services using Spring Boot, Hibernate, and JPA for robust backend functionality.</li>
+                                <li>Performed unit testing with JUnit, engaged in debugging, and implemented code optimization for improved performance, scalability, and maintainability.</li>
+                                <li>Gained practical experience with Maven for build automation, MySQL for relational database management, and Git for version control and collaborative development.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Experience Item 2 -->
+                <div class="timeline-item right">
+                    <div class="timeline-content animate-on-scroll">
+                        <div class="timeline-date">
+                            <span>Oct 2022 - Apr 2023</span>
+                        </div>
+                        <div class="timeline-card">
+                            <h3 class="timeline-title">Java Trainee</h3>
+                            <h4 class="timeline-company">SoftCrowed Technologies | Nashik</h4>
+                            <ul class="timeline-description">
+                                <li>Contributed to web application development using Java, Spring Boot, and Hibernate.</li>
+                                <li>Built and integrated RESTful APIs for backend services.</li>
+                                <li>Applied OOP principles, MVC architecture, and dependency injection for modular design.</li>
+                                <li>Utilized JPA/Hibernate ORM for database operations and wrote optimized SQL queries.</li>
+                                <li>Engaged in Agile development practices throughout the SDLC.</li>
+                                <li>Used tools like Git, Postman, Maven, and IntelliJ/Eclipse for efficient development.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Certifications Section -->
+                <div class="mt-16 md:mt-24 text-center">
+                    <h3 class="text-xl font-bold mb-8 text-gray-800 dark:text-white">Certifications</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="certification-card animate-on-scroll">
+                            <div class="certification-icon">
+                                <i class="fas fa-certificate"></i>
+                            </div>
+                            <h4>Full Stack Java Development</h4>
+                            <p>Profound Edutech Private Limited, Nashik</p>
+                            <span class="certification-date">June 2023</span>
+                        </div>
+                        
+                        <div class="certification-card animate-on-scroll animation-delay-200">
+                            <div class="certification-icon">
+                                <i class="fas fa-certificate"></i>
+                            </div>
+                            <h4>Python Certification</h4>
+                            <p>Softcrowd Technologies, Nashik</p>
+                            <span class="certification-date">Jan 2022</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="py-16 md:py-24 bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="section-heading text-center mb-12">
+                <h3 class="section-subtitle">My academic background</h3>
+                <h2 class="section-title">Education</h2>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="education-card animate-on-scroll">
+                    <div class="education-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>Master of Computer Applications (MCA)</h3>
+                    <h4>K K Wagh Education Society, Nashik</h4>
+                    <p class="education-date">Oct 2023 - June 2025</p>
+                    <p class="education-gpa">CGPA: 7.07 | Percentage: 63.03%</p>
+                </div>
+                
+                <div class="education-card animate-on-scroll animation-delay-200">
+                    <div class="education-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>Bachelor of Computer Science (BCS)</h3>
+                    <h4>Pune University</h4>
+                    <p class="education-date">July 2019 - June 2022</p>
+                    <p class="education-gpa">CGPA: 7.67</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-16 md:py-24 bg-white dark:bg-gray-800 transition-colors duration-300">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="section-heading text-center mb-12">
+                <h3 class="section-subtitle">My recent work</h3>
+                <h2 class="section-title">Projects</h2>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+                <!-- Project 1 -->
+                <div class="project-card animate-on-scroll" x-data="{ showDetails: false }">
+                    <div class="project-image">
+                        <img src="https://images.pexels.com/photos/7915437/pexels-photo-7915437.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Game Horizon Project">
+                        <div class="project-overlay" @click="showDetails = !showDetails">
+                            <i class="fas fa-eye"></i>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="flex justify-between items-center mb-2">
+                            <h3 class="project-title">Game Horizon</h3>
+                            <span class="project-date">Jan 2025</span>
+                        </div>
+                        <p class="project-subtitle">Real-time Communication & Community Platform | Backend</p>
+                        <div class="project-tech">
+                            <span>WebRTC</span>
+                            <span>React</span>
+                            <span>Node.js</span>
+                            <span>Socket.IO</span>
+                            <span>AWS</span>
+                            <span>Docker</span>
+                        </div>
+                        <p class="project-description">
+                            A free platform enabling real-time voice, video, and text chat for seamless collaboration across gaming, education, and professional communities.
+                        </p>
+                    </div>
+                    
+                    <div x-show="showDetails" @click.away="showDetails = false" class="project-details">
+                        <div class="project-details-content">
+                            <h3 class="text-xl font-bold mb-4">Game Horizon - Detailed Overview</h3>
+                            <p class="mb-4">
+                                Game Horizon is a comprehensive communication platform designed to facilitate real-time interaction between users through voice, video, and text channels. The platform serves as a hub for gaming communities, educational groups, and professional teams.
+                            </p>
+                            <h4 class="font-semibold mb-2">Key Features:</h4>
+                            <ul class="list-disc pl-5 mb-4">
+                                <li>Real-time voice and video communication using WebRTC</li>
+                                <li>Text channels with message history and search functionality</li>
+                                <li>Server and channel management with customizable permissions</li>
+                                <li>User presence indicators and status updates</li>
+                                <li>Responsive design for cross-platform compatibility</li>
+                            </ul>
+                            <h4 class="font-semibold mb-2">Technical Implementation:</h4>
+                            <p class="mb-4">
+                                The backend architecture leverages Node.js with Socket.IO for real-time communication, with WebRTC handling peer-to-peer voice and video connections. User data and message history are stored in a NoSQL database, while AWS provides scalable infrastructure. Docker containers ensure consistent deployment across environments.
+                            </p>
+                            <div class="flex justify-end mt-4">
+                                <button @click="showDetails = false" class="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300">
+                                    Close
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="project-card animate-on-scroll animation-delay-200" x-data="{ showDetails: false }">
+                    <div class="project-image">
+                        <img src="https://images.pexels.com/photos/3803517/pexels-photo-3803517.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Tiger Wheels Project">
+                        <div class="project-overlay" @click="showDetails = !showDetails">
+                            <i class="fas fa-eye"></i>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="flex justify-between items-center mb-2">
+                            <h3 class="project-title">Tiger Wheels</h3>
+                            <span class="project-date">Oct 2024</span>
+                        </div>
+                        <p class="project-subtitle">Real-time E-Commerce | Full Stack</p>
+                        <div class="project-tech">
+                            <span>Java</span>
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>Bootstrap</span>
+                            <span>JavaScript</span>
+                            <span>MySQL</span>
+                        </div>
+                        <p class="project-description">
+                            A free platform enabling real-time web platform for buying/selling new and used cars and spare parts professional communities.
+                        </p>
+                    </div>
+                    
+                    <div x-show="showDetails" @click.away="showDetails = false" class="project-details">
+                        <div class="project-details-content">
+                            <h3 class="text-xl font-bold mb-4">Tiger Wheels - Detailed Overview</h3>
+                            <p class="mb-4">
+                                Tiger Wheels is a comprehensive e-commerce platform focused on the automotive industry, providing a marketplace for new and used cars as well as spare parts. The platform connects buyers and sellers in a user-friendly environment.
+                            </p>
+                            <h4 class="font-semibold mb-2">Key Features:</h4>
+                            <ul class="list-disc pl-5 mb-4">
+                                <li>Advanced search and filtering options for vehicles and parts</li>
+                                <li>User accounts with saved searches and favorites</li>
+                                <li>Secure payment processing and escrow services</li>
+                                <li>Seller profiles with ratings and reviews</li>
+                                <li>Vehicle history reports and part compatibility checking</li>
+                                <li>Real-time notifications for price drops and new listings</li>
+                            </ul>
+                            <h4 class="font-semibold mb-2">Technical Implementation:</h4>
+                            <p class="mb-4">
+                                The application follows a monolithic architecture with Java handling the backend business logic. The frontend utilizes HTML, CSS with Bootstrap for responsive design, and JavaScript for interactive elements. MySQL manages the relational database with optimized queries for search functionality. Authentication and authorization are implemented using session management and hashed passwords for security.
+                            </p>
+                            <div class="flex justify-end mt-4">
+                                <button @click="showDetails = false" class="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300">
+                                    Close
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center">
+                <h3 class="text-xl font-bold mb-6 text-gray-800 dark:text-white">Co-Curricular Activities</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="activity-card animate-on-scroll">
+                        <div class="activity-icon">
+                            <i class="fas fa-trophy"></i>
+                        </div>
+                        <h4>Tech-Trek Competition</h4>
+                        <p>Demonstrated problem-solving and technical skills</p>
+                    </div>
+                    
+                    <div class="activity-card animate-on-scroll animation-delay-200">
+                        <div class="activity-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h4>Code Maze Quest Coordinator</h4>
+                        <p>ASCEND, Apr 2024: Managed event logistics and execution of coding challenges</p>
+                    </div>
+                    
+                    <div class="activity-card animate-on-scroll animation-delay-400">
+                        <div class="activity-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h4>Volunteer & Organizer</h4>
+                        <p>KKWIEER ASCN Department: Supported gaming and coding competitions</p>
+                    </div>
+                    
+                    <div class="activity-card animate-on-scroll animation-delay-600">
+                        <div class="activity-icon">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                        <h4>Neoron 3.0 Participant</h4>
+                        <p>K.K. Wagh Education Society, Feb 2024: Showcased problem-solving in coding competition</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 md:py-24 bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="section-heading text-center mb-12">
+                <h3 class="section-subtitle">Get in touch</h3>
+                <h2 class="section-title">Contact Me</h2>
+            </div>
+            
+            <div class="flex flex-col md:flex-row gap-8">
+                <div class="md:w-1/2 animate-on-scroll">
+                    <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-8">
+                        <h3 class="text-xl font-bold mb-6 text-gray-800 dark:text-white">Contact Information</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <div class="contact-icon">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium">Email</h4>
+                                    <p>sagarpawar9112895342@gmail.com</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="contact-icon">
+                                    <i class="fas fa-phone"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium">Phone</h4>
+                                    <p>9112895342</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="contact-icon">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium">Location</h4>
+                                    <p>Nashik, Maharashtra, India</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="contact-icon">
+                                    <i class="fab fa-linkedin"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium">LinkedIn</h4>
+                                    <p><a href="https://www.linkedin.com/in/sagarpawar0204/" target="_blank" class="text-blue-600 dark:text-blue-400 hover:underline">linkedin.com/in/sagarpawar0204</a></p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="contact-icon">
+                                    <i class="fab fa-github"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium">GitHub</h4>
+                                    <p><a href="https://github.com/sagarpawarsp/sagarpawarsp" target="_blank" class="text-blue-600 dark:text-blue-400 hover:underline">github.com/sagarpawarsp</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="md:w-1/2 animate-on-scroll animation-delay-200">
+                    <form class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-8" id="contactForm">
+                        <h3 class="text-xl font-bold mb-6 text-gray-800 dark:text-white">Send Message</h3>
+                        
+                        <div class="mb-4">
+                            <label for="name" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Name</label>
+                            <input type="text" id="name" name="name" class="form-input" placeholder="Your name" required>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <label for="email" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Email</label>
+                            <input type="email" id="email" name="email" class="form-input" placeholder="Your email" required>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <label for="subject" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Subject</label>
+                            <input type="text" id="subject" name="subject" class="form-input" placeholder="Subject">
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="message" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Message</label>
+                            <textarea id="message" name="message" rows="5" class="form-textarea" placeholder="Your message" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary w-full">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <h3 class="text-2xl font-bold">Sagar<span class="text-blue-400">Pawar</span></h3>
+                    <p class="mt-2 text-gray-400">Full Stack Software Engineer</p>
+                </div>
+                
+                <div class="flex space-x-6 mb-6 md:mb-0">
+                    <a href="#" class="footer-link">Home</a>
+                    <a href="#about" class="footer-link">About</a>
+                    <a href="#skills" class="footer-link">Skills</a>
+                    <a href="#experience" class="footer-link">Experience</a>
+                    <a href="#projects" class="footer-link">Projects</a>
+                    <a href="#contact" class="footer-link">Contact</a>
+                </div>
+                
+                <div class="flex space-x-4">
+                    <a href="https://www.linkedin.com/in/sagarpawar0204/" target="_blank" class="social-icon-footer">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://github.com/sagarpawarsp/sagarpawarsp" target="_blank" class="social-icon-footer">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="mailto:sagarpawar9112895342@gmail.com" class="social-icon-footer">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-500">
+                <p>&copy; 2025 Sagar Pawar. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
